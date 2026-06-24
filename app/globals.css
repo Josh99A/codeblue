@@ -1119,6 +1119,23 @@ img {
   text-decoration: none;
 }
 
+.site-footer-social {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+}
+
+.site-footer-social-x {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1rem;
+  height: 1rem;
+  font-size: 0.78rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
 .site-footer-social:hover,
 .site-footer-link:hover {
   color: #ffffff;

@@ -143,7 +143,15 @@ export function SiteFooter() {
             </p>
             <div className="site-footer-socials">
               {footerSocials.map((item) => (
-                <a key={item.label} href={item.href} className="site-footer-social">
+                <a
+                  key={item.label}
+                  href={item.href}
+                  className="site-footer-social"
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label={item.label}
+                >
+                  <FooterSocialIcon label={item.label} />
                   {item.label}
                 </a>
               ))}
@@ -217,6 +225,30 @@ export function LightLogoBadge({
       <Image src={markLight} alt="" aria-hidden className="light-logo-badge-mark" />
     </div>
   );
+}
+
+function FooterSocialIcon({ label }: { label: string }) {
+  if (label === "Instagram") {
+    return (
+      <span className="site-footer-social-instagram" aria-hidden>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <rect x="3" y="3" width="18" height="18" rx="5" ry="5" />
+          <path d="M16 11.37a4 4 0 1 1-3.37-3.37 4 4 0 0 1 3.37 3.37Z" />
+          <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+        </svg>
+      </span>
+    );
+  }
+
+  if (label === "X") {
+    return (
+      <span className="site-footer-social-x" aria-hidden>
+        X
+      </span>
+    );
+  }
+
+  return null;
 }
 
 export function BackToTopButton() {
