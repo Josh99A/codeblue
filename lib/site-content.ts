@@ -104,7 +104,7 @@ export const primaryActions = [
   {
     title: "Consult with doctor",
     href: "/consult",
-    description: "Speak to a doctor online, at our clinic (DMC), or at your home within Jinja.",
+    description: "Speak to a doctor online, in person, or at your home within Jinja.",
     image: imagery.doctor,
     imageAlt: "Ugandan doctor reviewing patient consultation details on a tablet",
     icon: Stethoscope,
@@ -139,7 +139,7 @@ export const processSteps = [
 
 export const consultationPricing = [
   { label: "Online consultation", price: "UGX 5,000", icon: Stethoscope },
-  { label: "Physical at DMC", price: "UGX 10,000", icon: ShieldCheck },
+  { label: "In-person consultation", price: "UGX 10,000", icon: ShieldCheck },
   { label: "Physical at patient within Jinja", price: "UGX 50,000", icon: HousePlus },
 ];
 
@@ -190,7 +190,7 @@ export const homeCareIncludes = [
 export const preferredContactOptions = ["WhatsApp", "Phone call", "Either works"];
 export const consultationModes = [
   "Online consultation",
-  "Physical at DMC",
+  "In-person consultation",
   "Physical at patient within Jinja",
 ];
 export const pickupModes = [
