@@ -1,36 +1,92 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Code Blue Medical Consultancy
 
-## Getting Started
+Code Blue Medical Consultancy is a digital-health platform concept for consultation requests, laboratory coordination, payment proof handling, and patient follow-up.
 
-First, run the development server:
+The product direction is a modern, trustworthy healthcare experience with:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- A `Next.js` frontend
+- A `Django` backend
+- Docker-based local and deployment orchestration
+- Planned VPS hosting on DigitalOcean
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Vision
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Build a calm, premium, startup-style healthcare experience that helps patients:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- Request consultations
+- Coordinate laboratory services
+- Upload supporting documents or payment proof
+- Receive clearer next steps and follow-up
 
-## Learn More
+The experience should feel:
 
-To learn more about Next.js, take a look at the following resources:
+- Credible
+- Simple
+- Fast
+- Human
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Planned Architecture
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Frontend
 
-## Deploy on Vercel
+- Framework: `Next.js`
+- Responsibility:
+  - Marketing website
+  - Patient-facing request flows
+  - Design system implementation
+  - Responsive UI for desktop and mobile
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Backend
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Framework: `Django`
+- Responsibility:
+  - Business logic
+  - Request intake and workflow handling
+  - Authentication and admin operations
+  - API endpoints for frontend consumption
+  - File/document handling
+
+### Infrastructure
+
+- Containerization: `Docker`
+- Hosting target: `DigitalOcean VPS`
+- Expected supporting services:
+  - `PostgreSQL`
+  - `Nginx`
+  - `Gunicorn`
+  - Optional object storage for uploads
+
+## Product Direction
+
+The current design direction is:
+
+- Modern digital-health startup aesthetic
+- Clean typography and strong spacing
+- Confident but calm blue/teal healthcare palette
+- Realistic healthcare imagery instead of abstract placeholders
+- Minimal visual clutter
+- `Code Blue Medical Consultancy` branding with the `CB` ECG logo system in `assets/branding/`
+
+## Core User Flows
+
+- Homepage trust-building and service discovery
+- Consultation or diagnostics request submission
+- Lab coordination and requisition handling
+- Payment clarity and proof submission
+- Follow-up and status visibility
+
+## Documentation
+
+- [AGENTS.md](AGENTS.md): Working rules for coding agents and contributors
+- [MEMORY.md](MEMORY.md): Durable project context and decisions
+- [assets/README.md](assets/README.md): Brand asset locations and logo usage notes
+
+## Current Status
+
+This repository is in its early setup stage. The initial priorities are:
+
+1. Establish project structure
+2. Apply the `Code Blue Medical Consultancy` logo system consistently across future frontend and marketing surfaces
+3. Build frontend foundation in `Next.js`
+4. Stand up API/backend foundation in `Django`
+5. Connect both via Docker for local development and deployment
