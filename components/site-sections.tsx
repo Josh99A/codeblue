@@ -306,7 +306,7 @@ export function ContactSections() {
             </div>
             <div className="info-card">
               <p className="info-card-label">Primary area</p>
-              <p className="info-card-value">Jinja town</p>
+              <p className="info-card-value">Mafubira, Jinja</p>
             </div>
           </div>
         </FadeIn>

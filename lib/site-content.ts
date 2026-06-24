@@ -25,11 +25,11 @@ export const navItems = [
 ];
 
 export const contactInfo = {
-  phoneDisplay: "+256 740 961565",
-  phoneHref: "tel:+256740961565",
-  whatsappHref: "https://wa.me/256740961565",
+  phoneDisplay: "+256 707 654397",
+  phoneHref: "tel:+256707654397",
+  whatsappHref: "https://wa.me/245740961565",
   availability: "24/7 availability",
-  location: ["Kayunga cell", "Namulesa parish", "Mafubira ward", "Jinja District, Uganda"],
+  location: ["Mafubira, Jinja", "Uganda"],
 };
 
 export const imagery = {
@@ -138,8 +138,8 @@ export const processSteps = [
 ];
 
 export const consultationPricing = [
-  { label: "Online consultation", price: "UGX 5,000", icon: Stethoscope },
-  { label: "In-person consultation", price: "UGX 10,000", icon: ShieldCheck },
+  { label: "Online consultation", price: "UGX 10,000", icon: Stethoscope },
+  { label: "In-person consultation", price: "UGX 20,000", icon: ShieldCheck },
   { label: "Physical at patient within Jinja", price: "UGX 50,000", icon: HousePlus },
 ];
 
@@ -214,9 +214,14 @@ export const footerLinks = [
 ];
 
 export const footerSocials = [
-  { href: "#", label: "Instagram" },
-  { href: "#", label: "X" },
-  { href: "#", label: "Facebook" },
+  {
+    href: "https://www.instagram.com/codebluemedicals?utm_source=qr&igsh=ZHNqbWx5YTRtanNt",
+    label: "Instagram",
+  },
+  {
+    href: "https://x.com/CodeBlumedicals",
+    label: "X",
+  },
 ];
 
 export const contactMeta = [
@@ -226,8 +231,6 @@ export const contactMeta = [
 ];
 
 export const locationMeta = [
-  { label: "Kayunga cell", icon: MapPin },
-  { label: "Namulesa parish", icon: MapPin },
-  { label: "Mafubira ward", icon: MapPin },
-  { label: "Jinja District, Uganda", icon: MapPin },
+  { label: "Mafubira, Jinja", icon: MapPin },
+  { label: "Uganda", icon: MapPin },
 ];
