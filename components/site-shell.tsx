@@ -1,6 +1,10 @@
+"use client";
+
+import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { Activity, Phone } from "lucide-react";
+import { usePathname } from "next/navigation";
+import { Activity, Menu, Phone, X } from "lucide-react";
 import logoLight from "@/assets/code-blue-logo-dark-tight.png";
 import markLight from "@/assets/code-blue-mark-dark-removebg-preview.png";
 import { contactInfo, contactMeta, footerLinks, footerSocials, locationMeta, navItems } from "@/lib/site-content";
@@ -8,28 +12,66 @@ import { FadeIn } from "@/components/motion";
 import { ButtonAnchor, cn, ContentWidth } from "@/components/ui";
 
 export function SiteHeader() {
+  const pathname = usePathname();
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
   return (
     <header className="site-header-shell">
       <ContentWidth>
         <div className="site-header-bar">
-          <Link href="/" className="site-logo-wrap" aria-label="Code Blue Medical Consultancy home">
+          <Link
+            href="/"
+            className="site-logo-wrap"
+            aria-label="Code Blue Medical Consultancy home"
+            onClick={() => setIsMenuOpen(false)}
+          >
             <Image src={logoLight} alt="Code Blue Medical Consultancy" priority className="site-logo" />
           </Link>
-          <nav className="site-nav">
-            {navItems.map((item) => (
-              <Link key={item.href} href={item.href} className="site-nav-link">
-                {item.label}
-              </Link>
-            ))}
-          </nav>
-          <div className="site-nav-actions">
-            <ButtonAnchor href={contactInfo.phoneHref} tone="nav-dark">
-              <Phone size={16} />
-              Call now
-            </ButtonAnchor>
-            <ButtonAnchor href={contactInfo.whatsappHref} target="_blank" rel="noreferrer" tone="nav-light">
-              WhatsApp
-            </ButtonAnchor>
+
+          <button
+            type="button"
+            className="site-menu-toggle"
+            aria-expanded={isMenuOpen}
+            aria-controls="site-header-nav-panel"
+            aria-label={isMenuOpen ? "Close navigation menu" : "Open navigation menu"}
+            onClick={() => setIsMenuOpen((open) => !open)}
+          >
+            {isMenuOpen ? <X size={18} /> : <Menu size={18} />}
+            <span>{isMenuOpen ? "Close" : "Menu"}</span>
+          </button>
+
+          <div
+            id="site-header-nav-panel"
+            className={cn("site-header-nav-panel", isMenuOpen && "site-header-nav-panel-open")}
+          >
+            <nav className="site-nav">
+              {navItems.map((item) => (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className={cn("site-nav-link", pathname === item.href && "site-nav-link-active")}
+                  aria-current={pathname === item.href ? "page" : undefined}
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  {item.label}
+                </Link>
+              ))}
+            </nav>
+            <div className="site-nav-actions">
+              <ButtonAnchor href={contactInfo.phoneHref} tone="nav-dark" onClick={() => setIsMenuOpen(false)}>
+                <Phone size={16} />
+                Call now
+              </ButtonAnchor>
+              <ButtonAnchor
+                href={contactInfo.whatsappHref}
+                target="_blank"
+                rel="noreferrer"
+                tone="nav-light"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                WhatsApp
+              </ButtonAnchor>
+            </div>
           </div>
         </div>
       </ContentWidth>

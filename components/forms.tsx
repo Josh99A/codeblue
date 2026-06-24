@@ -1,7 +1,7 @@
 "use client";
 
 import { startTransition, useState } from "react";
-import Image from "next/image";
+import Image, { type StaticImageData } from "next/image";
 import { FileText, MessageCircleMore, Phone } from "lucide-react";
 import { consultationModes, consultationPricing, contactInfo, imagery, pickupModes, preferredContactOptions, testPricing } from "@/lib/site-content";
 import { FadeIn } from "@/components/motion";
@@ -143,7 +143,7 @@ function SidePanel({
 }: {
   title: string;
   imageAlt: string;
-  imageSrc: string;
+  imageSrc: StaticImageData | string;
   items: Array<{ label: string; price: string }>;
   helperTitle: string;
   helperBody: string;
@@ -289,7 +289,7 @@ export function ConsultationForm() {
         <FadeIn delay={0.08}>
           <SidePanel
             title="Consultation pricing"
-            imageAlt="Doctor consulting with a patient"
+            imageAlt="Ugandan doctor reviewing consultation details for a patient"
             imageSrc={imagery.doctor}
             items={consultationPricing}
             helperTitle="Current priorities"
@@ -407,7 +407,7 @@ export function TestRequestForm() {
         <FadeIn delay={0.08}>
           <SidePanel
             title="Sample pickup flow"
-            imageAlt="Clinician ready for bedside diagnostics"
+            imageAlt="Ugandan clinician coordinating bedside diagnostics and sample pickup"
             imageSrc={imagery.test}
             items={testPricing}
             helperTitle="Before you send"
