@@ -311,6 +311,35 @@ export function ContactSections() {
           </div>
         </FadeIn>
       </section>
+
+      <FadeIn className="page-card contact-map-card">
+        <div className="section-heading">
+          <p className="section-kicker">Physical location</p>
+          <h2 className="section-title section-title-left">Find Code Blue in person.</h2>
+        </div>
+        <p className="section-body-text">
+          Visit the business location in Jinja using the live map below.
+        </p>
+        <div className="contact-map-frame">
+          <iframe
+            title="Code Blue Medical Consultancy location"
+            src="https://www.google.com/maps?q=0.476611,33.212000&z=17&output=embed"
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+            className="contact-map-embed"
+          />
+        </div>
+        <div className="page-actions">
+          <ButtonAnchor
+            href="https://www.google.com/maps/search/?api=1&query=0.476611,33.212000"
+            target="_blank"
+            rel="noreferrer"
+            tone="primary"
+          >
+            Open in Google Maps
+          </ButtonAnchor>
+        </div>
+      </FadeIn>
     </ContentWidth>
   );
 }

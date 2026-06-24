@@ -865,6 +865,26 @@ img {
   object-fit: cover;
 }
 
+.contact-map-card {
+  padding: 2rem;
+}
+
+.contact-map-frame {
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  background: linear-gradient(180deg, #fafdff, #eef8fc);
+  margin-top: 1.4rem;
+}
+
+.contact-map-embed {
+  display: block;
+  width: 100%;
+  height: min(62vw, 460px);
+  min-height: 320px;
+  border: 0;
+}
+
 .info-card {
   align-items: flex-start;
   flex-direction: column;
@@ -1328,7 +1348,8 @@ img {
   .support-card,
   .page-card,
   .page-card-soft,
-  .closing-cta {
+  .closing-cta,
+  .contact-map-card {
     padding: 1.6rem;
   }
 
@@ -1449,12 +1470,18 @@ img {
   .pricing-card,
   .page-card,
   .page-card-soft,
-  .closing-cta {
+  .closing-cta,
+  .contact-map-card {
     padding: 1.35rem;
   }
 
   .support-card-copy {
     padding-right: 0;
+  }
+
+  .contact-map-embed {
+    height: 78vw;
+    min-height: 280px;
   }
 }
 
