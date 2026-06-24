@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Fraunces, Manrope } from "next/font/google";
+import codeBlueMark from "@/assets/code-blue-mark-dark-removebg-preview.png";
 import "./globals.css";
 
 const manrope = Manrope({
@@ -16,6 +17,11 @@ export const metadata: Metadata = {
   title: "Code Blue Medical Consultancy",
   description:
     "Patient-first digital healthcare for doctor consultations, bedside nursing, bedside tests, and home-based support in Jinja.",
+  icons: {
+    icon: codeBlueMark.src,
+    shortcut: codeBlueMark.src,
+    apple: codeBlueMark.src,
+  },
 };
 
 export default function RootLayout({
