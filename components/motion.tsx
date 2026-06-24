@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, useReducedMotion } from "framer-motion";
-import type { ReactNode } from "react";
+import { useEffect, useState, type ReactNode } from "react";
 
 type FadeInProps = {
   children: ReactNode;
@@ -19,14 +19,32 @@ export function FadeIn({
   id,
 }: FadeInProps) {
   const reduceMotion = useReducedMotion();
+  const [isMobileViewport, setIsMobileViewport] = useState(false);
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia("(max-width: 768px)");
+    const syncViewport = () => setIsMobileViewport(mediaQuery.matches);
+
+    syncViewport();
+    mediaQuery.addEventListener("change", syncViewport);
+
+    return () => mediaQuery.removeEventListener("change", syncViewport);
+  }, []);
+
+  const useTransformMotion = !reduceMotion && !isMobileViewport;
 
   return (
     <motion.div
       id={id}
       className={className}
-      initial={reduceMotion ? false : { opacity: 0, y: distance }}
-      animate={reduceMotion ? undefined : { opacity: 1, y: 0 }}
+      initial={reduceMotion ? false : useTransformMotion ? { opacity: 0, y: distance } : { opacity: 0 }}
+      whileInView={reduceMotion ? undefined : useTransformMotion ? { opacity: 1, y: 0 } : { opacity: 1 }}
+      viewport={reduceMotion ? undefined : { once: true, amount: 0.2 }}
       transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1], delay }}
+      style={{
+        backfaceVisibility: "hidden",
+        transform: "translateZ(0)",
+      }}
     >
       {children}
     </motion.div>
