@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Activity, ArrowUp, Menu, MessageCircleMore, Phone, X } from "lucide-react";
+import { FaInstagram, FaXTwitter } from "react-icons/fa6";
 import logoLight from "@/assets/code-blue-logo-dark-tight.png";
 import markLight from "@/assets/code-blue-mark-dark-removebg-preview.png";
 import { contactInfo, contactMeta, footerLinks, footerSocials, locationMeta, navItems } from "@/lib/site-content";
@@ -230,22 +231,12 @@ export function LightLogoBadge({
 function FooterSocialIcon({ label }: { label: string }) {
   if (label === "Instagram") {
     return (
-      <span className="site-footer-social-instagram" aria-hidden>
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-          <rect x="3" y="3" width="18" height="18" rx="5" ry="5" />
-          <path d="M16 11.37a4 4 0 1 1-3.37-3.37 4 4 0 0 1 3.37 3.37Z" />
-          <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
-        </svg>
-      </span>
+      <FaInstagram className="site-footer-social-icon" aria-hidden />
     );
   }
 
   if (label === "X") {
-    return (
-      <span className="site-footer-social-x" aria-hidden>
-        X
-      </span>
-    );
+    return <FaXTwitter className="site-footer-social-icon" aria-hidden />;
   }
 
   return null;

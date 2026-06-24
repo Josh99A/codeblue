@@ -1125,14 +1125,14 @@ img {
   gap: 0.55rem;
 }
 
-.site-footer-social-x {
+.site-footer-social-icon {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   width: 1rem;
   height: 1rem;
-  font-size: 0.78rem;
-  font-weight: 800;
+  flex: 0 0 auto;
+  font-size: 1rem;
   line-height: 1;
 }
 
