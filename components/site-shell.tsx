@@ -1,10 +1,10 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Activity, Menu, Phone, X } from "lucide-react";
+import { Activity, ArrowUp, Menu, MessageCircleMore, Phone, X } from "lucide-react";
 import logoLight from "@/assets/code-blue-logo-dark-tight.png";
 import markLight from "@/assets/code-blue-mark-dark-removebg-preview.png";
 import { contactInfo, contactMeta, footerLinks, footerSocials, locationMeta, navItems } from "@/lib/site-content";
@@ -219,6 +219,53 @@ export function LightLogoBadge({
   );
 }
 
+export function BackToTopButton() {
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => {
+      setIsVisible(window.scrollY > 320);
+    };
+
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  return (
+    <button
+      type="button"
+      className={cn("back-to-top", isVisible && "back-to-top-visible")}
+      aria-label="Back to top"
+      onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+    >
+      <ArrowUp size={18} />
+    </button>
+  );
+}
+
+export function WhatsAppBubble() {
+  return (
+    <a
+      href={contactInfo.whatsappHref}
+      target="_blank"
+      rel="noreferrer"
+      className="whatsapp-float"
+      aria-label="Chat with Code Blue on WhatsApp"
+    >
+      <span className="whatsapp-float-ring" aria-hidden />
+      <span className="whatsapp-float-icon">
+        <MessageCircleMore size={22} />
+      </span>
+      <span className="whatsapp-float-copy">
+        <strong>WhatsApp</strong>
+        <span>Chat now</span>
+      </span>
+    </a>
+  );
+}
+
 export function InteriorPageFrame({
   children,
   title,
@@ -232,6 +279,8 @@ export function InteriorPageFrame({
     <>
       <InteriorHeader title={title} description={description} />
       {children}
+      <BackToTopButton />
+      <WhatsAppBubble />
       <ClosingCta />
       <SiteFooter />
     </>
@@ -247,6 +296,8 @@ export function HomePageFrame({
     <>
       <SiteHeader />
       {children}
+      <BackToTopButton />
+      <WhatsAppBubble />
       <ClosingCta />
       <SiteFooter />
     </>
