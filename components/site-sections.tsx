@@ -48,7 +48,7 @@ export function HomeHero() {
           <div className="home-hero-image-wrap">
             <Image
               src={imagery.hero}
-              alt="Code Blue clinician standing confidently"
+              alt="Ugandan Code Blue clinician using a tablet in a modern clinic"
               width={960}
               height={1120}
               className="home-hero-image"
@@ -124,6 +124,15 @@ export function HomepageSections() {
 
               return (
                 <FadeIn key={item.title} delay={index * 0.06} className="service-feature">
+                  <div className="service-feature-media">
+                    <Image
+                      src={item.image}
+                      alt={item.imageAlt}
+                      width={640}
+                      height={420}
+                      className="service-feature-image"
+                    />
+                  </div>
                   <div className="service-feature-copy">
                     <span className="service-feature-icon">
                       <Icon size={20} />
@@ -134,9 +143,6 @@ export function HomepageSections() {
                       Learn more
                       <ArrowRight size={15} />
                     </Link>
-                  </div>
-                  <div className="service-feature-media">
-                    <Image src={item.image} alt={item.title} width={420} height={520} className="service-feature-image" />
                   </div>
                 </FadeIn>
               );
@@ -209,9 +215,9 @@ export function HomepageSections() {
               <div className="support-card-media">
                 <Image
                   src={imagery.support}
-                  alt="Landscape representing Jinja-based support"
-                  width={420}
-                  height={420}
+                  alt="Ugandan family reviewing care progress with Code Blue support"
+                  width={960}
+                  height={720}
                   className="support-card-image"
                 />
               </div>
@@ -260,7 +266,7 @@ export function ContactSections() {
         <FadeIn delay={0.08} className="page-media-card">
           <Image
             src={imagery.contactDetail}
-            alt="Code Blue clinician ready to support patients"
+            alt="Ugandan nurse supporting an older patient and family caregiver"
             width={960}
             height={1200}
             className="page-media-image"

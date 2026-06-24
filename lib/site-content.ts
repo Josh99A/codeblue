@@ -10,6 +10,11 @@ import {
   ShieldCheck,
   Stethoscope,
 } from "lucide-react";
+import trustOutcomesImage from "@/assets/images/5. Trust and Outcomes Slot.png";
+import familySupportImage from "@/assets/images/10. Family Support Contact Detail.png";
+import homepageHeroImage from "@/assets/images/7. Jinja Digital Care Hero.png";
+import doctorConsultationImage from "@/assets/images/8. Doctor Consultation Detail.png";
+import bedsideDiagnosticsDetailImage from "@/assets/images/9. Bedside Diagnostics Detail.png";
 
 export const navItems = [
   { href: "/", label: "Home" },
@@ -28,15 +33,13 @@ export const contactInfo = {
 };
 
 export const imagery = {
-  hero: "https://images.unsplash.com/photo-1651008376811-b90baee60c1f?auto=format&fit=crop&w=1200&q=80",
-  nurse: "https://images.unsplash.com/photo-1584516150909-c43483ee7938?auto=format&fit=crop&w=960&q=80",
-  doctor: "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&w=960&q=80",
-  test: "https://images.unsplash.com/photo-1579154204601-01588f351e67?auto=format&fit=crop&w=960&q=80",
-  support: "https://images.unsplash.com/photo-1472396961693-142e6e269027?auto=format&fit=crop&w=960&q=80",
-  consultDetail:
-    "https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&w=1200&q=80",
-  contactDetail:
-    "https://images.unsplash.com/photo-1612531386530-97286d97c2d2?auto=format&fit=crop&w=1200&q=80",
+  hero: homepageHeroImage,
+  nurse: familySupportImage,
+  doctor: doctorConsultationImage,
+  test: bedsideDiagnosticsDetailImage,
+  support: trustOutcomesImage,
+  consultDetail: doctorConsultationImage,
+  contactDetail: familySupportImage,
 };
 
 export const heroActions = [
@@ -95,6 +98,7 @@ export const primaryActions = [
     href: "/home-wellness",
     description: "Compassionate, professional support at home. From wellness checks to recovery follow-ups.",
     image: imagery.nurse,
+    imageAlt: "Code Blue nurse supporting a Ugandan family and older patient",
     icon: HousePlus,
   },
   {
@@ -102,6 +106,7 @@ export const primaryActions = [
     href: "/consult",
     description: "Speak to a doctor online, at our clinic (DMC), or at your home within Jinja.",
     image: imagery.doctor,
+    imageAlt: "Ugandan doctor reviewing patient consultation details on a tablet",
     icon: Stethoscope,
   },
   {
@@ -109,6 +114,7 @@ export const primaryActions = [
     href: "/tests",
     description: "Share your request and we handle the rest, including home sample pickup.",
     image: imagery.test,
+    imageAlt: "Ugandan clinician coordinating bedside diagnostics and home sample pickup",
     icon: FlaskConical,
   },
 ];
