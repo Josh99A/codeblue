@@ -9,6 +9,7 @@ type FadeInProps = {
   delay?: number;
   distance?: number;
   id?: string;
+  duration?: number;
 };
 
 export function FadeIn({
@@ -17,6 +18,7 @@ export function FadeIn({
   delay = 0,
   distance = 24,
   id,
+  duration = 0.42,
 }: FadeInProps) {
   const reduceMotion = useReducedMotion();
   const [isMobileViewport, setIsMobileViewport] = useState(false);
@@ -32,6 +34,7 @@ export function FadeIn({
   }, []);
 
   const useTransformMotion = !reduceMotion && !isMobileViewport;
+  const resolvedDelay = Math.min(delay, 0.16);
 
   return (
     <motion.div
@@ -39,8 +42,8 @@ export function FadeIn({
       className={className}
       initial={reduceMotion ? false : useTransformMotion ? { opacity: 0, y: distance } : { opacity: 0 }}
       whileInView={reduceMotion ? undefined : useTransformMotion ? { opacity: 1, y: 0 } : { opacity: 1 }}
-      viewport={reduceMotion ? undefined : { once: true, amount: 0.2 }}
-      transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1], delay }}
+      viewport={reduceMotion ? undefined : { once: true, amount: 0.08, margin: "0px 0px 12% 0px" }}
+      transition={{ duration, ease: [0.16, 1, 0.3, 1], delay: resolvedDelay }}
       style={{
         backfaceVisibility: "hidden",
         transform: "translateZ(0)",
@@ -69,7 +72,7 @@ export function StaggerGroup({
         hidden: {},
         visible: {
           transition: {
-            staggerChildren: 0.08,
+            staggerChildren: 0.05,
           },
         },
       }}
@@ -99,7 +102,7 @@ export function StaggerItem({
               visible: {
                 opacity: 1,
                 y: 0,
-                transition: { duration: 0.5, ease: [0.22, 1, 0.36, 1] },
+                transition: { duration: 0.4, ease: [0.16, 1, 0.3, 1] },
               },
             }
       }
