@@ -155,7 +155,6 @@ export function SiteFooter() {
                   <span className="site-footer-social-icon-wrap">
                     <FooterSocialIcon label={item.label} />
                   </span>
-                  <span>{item.label}</span>
                 </a>
               ))}
             </div>

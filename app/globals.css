@@ -1168,6 +1168,12 @@ img {
   margin-top: 1rem;
 }
 
+.site-footer-socials {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
 .site-footer-social,
 .site-footer-link,
 .site-footer-item {
@@ -1178,14 +1184,13 @@ img {
 .site-footer-social {
   display: inline-flex;
   align-items: center;
-  gap: 0.8rem;
-  width: fit-content;
+  justify-content: center;
+  width: 2.75rem;
   min-height: 2.75rem;
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 999px;
   background: rgba(255, 255, 255, 0.04);
-  padding: 0.45rem 0.85rem 0.45rem 0.45rem;
-  font-weight: 600;
+  padding: 0;
 }
 
 .site-footer-social-icon-wrap {
