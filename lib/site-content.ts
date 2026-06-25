@@ -25,9 +25,9 @@ export const navItems = [
 ];
 
 export const contactInfo = {
-  phoneDisplay: "+256 707 654397",
-  phoneHref: "tel:+256707654397",
-  whatsappHref: "https://wa.me/245740961565",
+  phoneDisplay: "+256 740 961565",
+  phoneHref: "tel:+256740961565",
+  whatsappHref: "https://wa.me/256740961565",
   availability: "24/7 availability",
   location: ["Mafubira, Jinja", "Uganda"],
 };

@@ -152,8 +152,10 @@ export function SiteFooter() {
                   rel="noreferrer"
                   aria-label={item.label}
                 >
-                  <FooterSocialIcon label={item.label} />
-                  {item.label}
+                  <span className="site-footer-social-icon-wrap">
+                    <FooterSocialIcon label={item.label} />
+                  </span>
+                  <span>{item.label}</span>
                 </a>
               ))}
             </div>
